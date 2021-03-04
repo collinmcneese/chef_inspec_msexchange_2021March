@@ -12,16 +12,13 @@ jobs:
       - name: Install Chef Workstation
         run: . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -channel stable -project chef-workstation
         shell: powershell
-      - name: Add Chef Workstation to PATH
-        run: echo "##[add-path]C:\opscode\chef-workstation\bin\;"
-        shell: powershell
       - name: Verify Inspec Profile
-        run: inspec check .
+        run: C:\opscode\chef-workstation\bin\inspec check .
         shell: powershell
         env:
           CHEF_LICENSE: accept-no-persist
       - name: Run Inspec Test
-        run: inspec exec .
+        run: C:\opscode\chef-workstation\bin\inspec exec .
         shell: powershell
         continue-on-error: true
         env:
