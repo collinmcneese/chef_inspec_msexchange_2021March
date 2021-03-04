@@ -13,7 +13,7 @@ control 'exchange_hotfix_check_2021March' do
   ref 'CVE-2021-26858', url: 'https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26858'
   ref 'CVE-2021-27065', url: 'https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-27065'
 
-  only_if { os[:family] == 'windows' && inspec.powershell((Get-Package).name).stdout.split.any?  { |list| /Exchange Server/ =~ list } }
+  only_if { os[:family] == 'windows' && inspec.powershell('(Get-Package).name').stdout.split.any?  { |list| /Exchange Server/ =~ list } }
 
   # Verify that Hotfix has been installed for Microsoft Exchange Server
   describe.one do
