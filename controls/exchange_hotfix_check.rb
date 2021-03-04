@@ -15,7 +15,7 @@ control 'exchange_hotfix_check_2021March' do
 
   only_if do
     os[:family] == 'windows' &&
-      inspec.powershell('(Get-Package).name').stdout.split.any? { |list| /Exchange Server/ =~ list }
+    inspec.powershell('(Get-WmiObject -Class Win32_Product).name').stdout.split("\r\n").any?  { |list| /Exchange Server/ =~ list }
   end
 
   # Verify that Hotfix has been installed for Microsoft Exchange Server
