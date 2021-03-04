@@ -13,7 +13,7 @@ jobs:
         run: . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -channel stable -project chef-workstation
         shell: powershell
       - name: Add Chef Workstation to PATH
-        run: $env:PATH = "C:\opscode\chef-workstation\bin\;" + $env:PATH
+        run: echo "C:\opscode\chef-workstation\bin\;" >> $GITHUB_PATH
         shell: powershell
       - name: Verify Inspec Profile
         run: inspec check .

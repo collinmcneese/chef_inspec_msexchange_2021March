@@ -1,4 +1,4 @@
-# CVE-2021-26855.rb
+# exchange_hotfix_check.rb
 
 control 'exchange_hotfix_check_2021March' do
   impact 1.0
