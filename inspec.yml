@@ -1,0 +1,15 @@
+name: inspec_msexchange_2021march
+title: Inspec Profile to detect CVEs included in March 2021 Microsoft Exchange vulnerabilities
+maintainer: Collin McNeese
+copyright: Collin McNeese
+copyright_email: cmcneese@chef.io
+license: Apache-2.0
+summary: |
+  Detects for missing patches related to March 2021 Microsoft Exchange published vulnerabilities
+  * CVE-2021-27065
+  * CVE-2021-26858
+  * CVE-2021-26857
+  * CVE-2021-26855
+version: 0.1.0
+supports:
+  platform: windows
